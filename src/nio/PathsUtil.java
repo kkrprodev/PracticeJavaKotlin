@@ -16,13 +16,10 @@ public class PathsUtil {
         String convertedToString = convertToString(byteBuffer);
         int status = writeToFile(file, convertedToString);
         System.out.println("Write Status: " + status);
+
     }
 
     static String convertToString(ByteBuffer bb) {
-
-        /* Charset charset = Charset.forName("US-ASCII");
-         CharBuffer charBuffer = StandardCharsets.UTF_8.decode(bb);*/
-
         byte[] array = bb.array();
         String s = new String(array).replaceAll("\0", "");
         return s;
